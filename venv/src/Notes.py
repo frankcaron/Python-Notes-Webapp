@@ -57,6 +57,7 @@ class Notepad:
         new_note = Note()
         new_note.create_note(content)
         self._notes.append(new_note)
+        del new_note #clean up
         
     #Remove note at id
     def remove_note(self, note_id):
