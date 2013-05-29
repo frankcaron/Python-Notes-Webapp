@@ -90,9 +90,9 @@ NotesDB
 
 Simple database model to store notes
 
-note_id as INT
-notepad_id as INT
-creator as TEXT
-date_created as DATE
-title as STRING
-content as STRING
+note_id as INT AUTOINC PK  
+notepad_id as INT AUTOINC  
+creator as TEXT  
+date_created as DATE  
+title as STRING  
+content as STRING  
