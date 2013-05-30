@@ -16,18 +16,6 @@ import sys
 #"Global" Vars
 con = None
 
-#Method to create the new columns
-def create_table_columns():
-    #Create column
-    sql_1 = 'ALTER TABLE notes ADD COLUMN notes_id_key INTEGER PRIMARY KEY AUTOINCREMENT;'
-    sql_1 += 'ALTER TABLE notes ADD COLUMN notepad_id_key INTEGER;'
-    sql_1 += 'ALTER TABLE notes ADD COLUMN note_creator TEXT;'
-    sql_1 += 'ALTER TABLE notes ADD COLUMN note_date_updated TEXT;'
-    sql_1 += 'ALTER TABLE notes ADD COLUMN note_title TEXT;'
-    sql_1 += 'ALTER TABLE notes ADD COLUMN note_content BLOB;'
-    
-    cur.execute(sql_1)
-
 # ==========
 # Test
 # ==========
@@ -42,13 +30,9 @@ try:
     data = cur.fetchone()
     
     #Print
-    print "Data returned: " + str(data)   
-    
-    #Try alters
-    create_table_columns()           
+    print "Data returned: " + str(data)           
     
 except lite.Error, e:
-    
     #Catch and print errors
     print "Error %s:" % e.args[0]
     sys.exit(1)
