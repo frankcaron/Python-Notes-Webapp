@@ -1,3 +1,7 @@
+#Imports
+import datetime
+from DBHelper import DBWriter
+
 #
 # Class: Note
 # 
@@ -12,6 +16,8 @@ class Note:
     _note_creator = ''
     _note_content = ''
     _note_title = ''
+    _note_db_query = ''
+    _note_db_writer = DBWriter()
     
     #Constructor method
     def __init__(self):
@@ -23,7 +29,15 @@ class Note:
         self._note_creator = 'system_default'
         self._note_content = content_to_add
         self._note_title = self.determine_title(content_to_add + '\n')  #include a '\n' in case it's a one-liner
-    
+        
+        #Prep DB Query
+        self._note_db_query = "INSERT INTO notes (note_content, note_title, note_creator, note_date_updated)"
+        self._note_db_query += "VALUES ('" + self._note_content + "','" + self._note_title + "','" + self._note_creator + "','"
+        self._note_db_query += str(datetime.datetime.now()) + "');"
+        
+        #Write to DB
+        self._note_db_writer.db_update(self._note_db_query)
+        
     #Updates the note with the specified content
     def update_note(self, content_to_update):
         self._note_content = content_to_update
@@ -33,6 +47,8 @@ class Note:
     #by finding the first new line character.
     def determine_title(self, title_to_cut):
         return title_to_cut.split('\n', 1)[1]
+    
+
 
 #
 # Class: NoteList
