@@ -9,7 +9,7 @@
 import sqlite3 as lite
 
 #Global Vars
-_db_name = 'notes.db'
+_db_name = 'pythonotes/notes.db'
 
 #
 # Module: DBWriter

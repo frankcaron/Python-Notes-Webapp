@@ -4,7 +4,7 @@
 # Basic test playbed for testing the note app
 #
 #Import Classes
-import Notes
+from pythonotes import Notes
 
 #
 print '\nTest 1: '
