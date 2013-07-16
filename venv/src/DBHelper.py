@@ -40,9 +40,7 @@ class DBWriter:
         self._db_cursor = self._db_con.cursor()    
         try:
             self._db_cursor.execute('SELECT COUNT(*) FROM notes WHERE notepad_id_key =' + str(notepad_id) + ';')
-            number_occur = self._db_cursor.fetchone()[0]
-            print number_occur
-            return number_occur
+            return self._db_cursor.fetchone()[0]
         except lite.ProgrammingError as e:
             print "DBHelper Error: " + e
         self._db_cursor.close()
