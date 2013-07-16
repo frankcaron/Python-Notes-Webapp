@@ -85,9 +85,13 @@ class Notepad:
     _note_db_deleter = DBHelper.DBDeleter()
     
     #Constructor method
-    def __init__(self):
-    #This will eventually sync with the ID in the DB
-        self._id = 0
+    def __init__(self, id_to_specify):
+        
+        _note_db_writer = DBHelper.DBWriter()
+        if _note_db_writer.db_check_notepad_id(id_to_specify) == 0:
+            self._id = id_to_specify
+        else:
+            print "Error: This ID already exists."
 
     #Add note to the list
     def add_note(self, content):
