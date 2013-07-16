@@ -12,7 +12,6 @@ macholib==1.4.2
 modulegraph==0.9.1
 numpy==1.6.1
 py2app==0.6.3
-pyOpenSSL==0.13]
 python-dateutil==1.5
 virtualenv==1.9.1
 wsgiref==0.1.2
