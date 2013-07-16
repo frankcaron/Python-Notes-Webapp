@@ -1,27 +1,26 @@
-#Hello World
-from pythonotes import pythonotes
+#
+# Module: Notes REST Controller
+# 
+# This controller handles REST calls 
+# via Flask
+# 
+# 2013, Frank Caron
 
-@app.route('/')
-@app.route('/index')
+#Imports
+from pythonotes import pythonotes
+from pythonotes import DBHelper
+
+#Object
+tempHelper = DBHelper.DBReader()
+
+@pythonotes.route('/')
+@pythonotes.route('/index')
 def index():
     return "Frank's humble python web service beginnings, now with notes."
 
 #REST Controller
 from flask import jsonify
 
-notes = [
-    {
-        'id': 1,
-        'title': u'Buy groceries',
-        'content': u'Milk, Cheese, Pizza, Fruit, Tylenol' 
-    },
-    {
-        'id': 2,
-        'title': u'Learn Python',
-        'content': u'Need to find a good Python tutorial on the web' 
-    }
-]
-
-@app.route('/notes/', methods = ['GET'])
+@pythonotes.route('/notes/', methods = ['GET'])
 def get_tasks():
-    return jsonify( { 'notes': notes } )
+    return jsonify( { 'notes': tempHelper.db_get_last_row_id() } )

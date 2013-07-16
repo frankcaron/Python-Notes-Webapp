@@ -1,1 +1,1 @@
-web: gunicorn pythonotes:app
+web: gunicorn pythonotes:pythonotes
