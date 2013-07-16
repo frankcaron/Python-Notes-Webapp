@@ -1,4 +1,4 @@
-PythonNoteService
+Pythonotes
 =================
 
 A simple note storage and editing web service written in Python to be consumed by apps.
