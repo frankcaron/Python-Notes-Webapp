@@ -21,8 +21,6 @@ http://frankcaron.com
 To Do
 =================
 * Fully complete REST controllers locally and push to Heroku
-* Migrate from SQLite to Postgres so the app can be hosted on Heroku properly (SQLite doesn't work)
-* Validate REST use cases (persist notes, add notes, edit notes, delete notes) via REST
 * Move on to iOS client
 
 Design
