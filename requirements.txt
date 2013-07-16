@@ -6,12 +6,13 @@ Twisted==12.0.0
 Werkzeug==0.9.1
 altgraph==0.9
 bdist-mpkg==0.4.4
+bonjour-py==0.3
 gunicorn==17.5
 itsdangerous==0.22
 macholib==1.4.2
 modulegraph==0.9.1
 numpy==1.6.1
-py2app==0.6.3
+psycopg2==2.5.1
 python-dateutil==1.5
 virtualenv==1.9.1
 wsgiref==0.1.2
