@@ -20,10 +20,10 @@ http://frankcaron.com
 
 To Do
 =================
-* Refactor the folder structure of the app for best practice
-* Ensure flask, gunicorn is properly installed in venv
-* Create simple controller based on today's learnings 
-* Push local to Heroku
+* Fully complete REST controllers locally and push to Heroku
+* Migrate from SQLite to Postgres so the app can be hosted on Heroku properly (SQLite doesn't work)
+* Validate REST use cases (persist notes, add notes, edit notes, delete notes) via REST
+* Move on to iOS client
 
 Design
 =================
