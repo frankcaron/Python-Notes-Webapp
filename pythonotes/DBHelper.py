@@ -14,10 +14,10 @@ import urlparse
 urlparse.uses_netloc.append("postgres")
 
 #Remote
-#url = urlparse.urlparse(os.environ["DATABASE_URL"])
+url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 #Local
-url(postgres://frankcaron:@127.0.0.1:5432/notes)
+#url(postgres://frankcaron:@127.0.0.1:5432/notes)
 
 #
 # Module: DBWriter
