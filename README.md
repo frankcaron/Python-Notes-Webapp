@@ -18,6 +18,13 @@ Contributors
 Frank Caron, 2013  
 http://frankcaron.com
 
+To Do
+=================
+* Refactor the folder structure of the app for best practice
+* Ensure flask, gunicorn is properly installed in venv
+* Create simple controller based on today's learnings 
+* Push local to Heroku
+
 Design
 =================
 
