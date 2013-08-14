@@ -17,7 +17,7 @@ temp_helper = DBHelper.DBReader()
 @pythonotes.route('/')
 @pythonotes.route('/index')
 def index():
-    return "Frank's humble python web service beginnings, now with notes."
+    return "Frank's humble python web service beginnings, now with notes. And fun."
 
 # REST Handlers
 # -------------------
