@@ -9,11 +9,11 @@
 #Imports
 from pythonotes import pythonotes
 from pythonotes import DBHelper
+from pythonotes import Notes
 import json
 from flask import abort, jsonify
 
 temp_helper = DBHelper.DBReader()
-temp_writer = DBHelper.DBWriter()
 
 @pythonotes.route('/')
 @pythonotes.route('/index')
@@ -60,5 +60,8 @@ def get_last_note_id():
 def create_note():
     if not request.json or not 'note_content' or not 'note_creator' in request.json:
         abort(400)
-    temp_writer.create_note(request.json['note_content'], request.json['note_creator']);
+    #temp_writer.create_note(request.json['note_content'], request.json['note_creator']);
+    #Figure out who the user is to isolate the notepad
+    #retrieve the notepad object associated
+    #create a new note with the content
     return jsonify( { 'note_id': temp_helper.db_get_last_row_id() } ), 201    
