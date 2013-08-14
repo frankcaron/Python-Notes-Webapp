@@ -6,7 +6,7 @@
 # 
 # 2013, Frank Caron
 
-#Imports
+# Imports
 from pythonotes import pythonotes
 from pythonotes import DBHelper
 from pythonotes import Notes
@@ -57,11 +57,11 @@ def get_last_note_id():
 # Returns the row ID for the last row created
     
 @pythonotes.route('/notes/', methods = ['POST'])
-def create_note():
-    if not request.json or not 'note_content' or not 'note_creator' in request.json:
+def make_new_note():
+    if not request.json or not 'note_content' in request.json or not 'note_creator' in request.json:
         abort(400)
-    #temp_writer.create_note(request.json['note_content'], request.json['note_creator']);
-    #Figure out who the user is to isolate the notepad
-    #retrieve the notepad object associated
-    #create a new note with the content
+    # temp_writer.create_note(request.json['note_content'], request.json['note_creator']);
+    # Figure out who the user is to isolate the notepad
+    # retrieve the notepad object associated
+    # create a new note with the content
     return jsonify( { 'note_id': temp_helper.db_get_last_row_id() } ), 201    
