@@ -13,6 +13,7 @@ import json
 from flask import abort, jsonify
 
 temp_helper = DBHelper.DBReader()
+temp_writer = DBHelper.DBWriter()
 
 @pythonotes.route('/')
 @pythonotes.route('/index')
@@ -50,4 +51,14 @@ def get_specific_notepad(notepad_id):
 # Returns the row ID for the last row created
 @pythonotes.route('/notes/lastid', methods = ['GET'])
 def get_last_note_id():
-    return jsonify( { 'notes': temp_helper.db_get_last_row_id() } )
+    return jsonify( { 'note_id': temp_helper.db_get_last_row_id() } )
+    
+# Create Note - POST
+# Returns the row ID for the last row created
+    
+@pythonotes.route('/notes/', methods = ['POST'])
+def create_note():
+    if not request.json or not 'note_content' or not 'note_creator' in request.json:
+        abort(400)
+    temp_writer.create_note(request.json['note_content'], request.json['note_creator']);
+    return jsonify( { 'note_id': temp_helper.db_get_last_row_id() } ), 201    

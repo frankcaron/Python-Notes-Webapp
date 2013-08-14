@@ -32,8 +32,8 @@ class Note:
         self._note_id = 0
             
     #Function to set Note
-    def create_note(self, content_to_add):
-        self._note_creator = 'system_default'
+    def create_note(self, content_to_add, creator):
+        self._note_creator = creator
         self._note_content = content_to_add
         self._note_title = self._determine_title(content_to_add + '\n')  #include a '\n' in case it's a one-liner
         

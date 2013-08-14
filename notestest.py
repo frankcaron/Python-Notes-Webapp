@@ -13,7 +13,7 @@ print '\nTest 1: '
 temp2 = Notes.Notepad(1)
 
 #Add some notes
-temp2.add_note('note1')
+temp2.add_note('note1', 'frank')
 #temp2.add_note('note2')
 #temp2.add_note('note3')
 
