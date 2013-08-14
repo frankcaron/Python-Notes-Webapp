@@ -48,6 +48,29 @@ class DBWriter:
         self._db_cursor.close()
         self._db_con.close()
         
+    #Create a new note
+    def db_create_note(self, note_content, note_creator, note_id):
+        self._db_con = psycopg2.connect(
+            database=url.path[1:],
+            user=url.username,
+            password=url.password,
+            host=url.hostname,
+            port=url.port)
+            
+        #Prep DB Query
+        _note_create_query = "INSERT INTO notes (note_content, note_title, note_creator, note_date_updated, notepad_id_key)"
+        _note_create_query += "VALUES ('" + note_content + "','" + note_content.split('\n', 1) + "','" + note_creator + "','"
+        _note_create_query += str(datetime.datetime.now()) + "'," + note_id + ");"
+
+        self._db_cursor = self._db_con.cursor()    
+        try:
+            self._db_cursor.execute(_note_create_query)
+            self._db_con.commit()
+        except Exception, e:
+            print "DBHelper Error: " + e.pgerror
+        self._db_cursor.close()
+        self._db_con.close()
+        
     #Check if Notepad ID exists
     def db_check_notepad_id(self, notepad_id):
         self._db_con = psycopg2.connect(
