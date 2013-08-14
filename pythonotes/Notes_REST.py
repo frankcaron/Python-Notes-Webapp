@@ -61,7 +61,7 @@ def get_last_note_id():
 def make_new_note():
     if not request.json or not 'note_content' in request.json or not 'note_creator' in request.json:
         abort(400)
-    temp_writer.db_create_note(request.json['note_content'], request.json['note_creator'], temp_helper.db_get_last_row_id() + 1);
+    #temp_writer.db_create_note(request.json['note_content'], request.json['note_creator'], temp_helper.db_get_last_row_id() + 1);
     # Figure out who the user is to isolate the notepad
     # retrieve the notepad object associated
     # create a new note with the content
