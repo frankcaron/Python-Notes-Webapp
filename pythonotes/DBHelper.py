@@ -9,6 +9,7 @@
 import os
 import psycopg2
 import urlparse
+import datetime
 
 #Connection
 urlparse.uses_netloc.append("postgres")
