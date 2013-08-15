@@ -15,10 +15,10 @@ import datetime
 urlparse.uses_netloc.append("postgres")
 
 #Remote
-url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_RED_URL"])
+# url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_RED_URL"])
 
 #Local
-#url(postgres://user:pass@127.0.0.1:5432/notes)
+url = urlparse.urlparse("postgres://franktest:@127.0.0.1:5432/notes")
 
 #
 # Module: DBWriter
@@ -60,8 +60,8 @@ class DBWriter:
             
         #Prep DB Query
         _note_create_query = "INSERT INTO notes (note_content, note_title, note_creator, note_date_updated, notepad_id_key)"
-        _note_create_query += "VALUES ('" + note_content + "','" + note_content.split('\n', 1) + "','" + note_creator + "','"
-        _note_create_query += str(datetime.datetime.now()) + "'," + note_id + ");"
+        _note_create_query += "VALUES ('" + note_content + "','" + "Test" + "','" + note_creator + "','"
+        _note_create_query += str(datetime.datetime.now()) + "'," + str(note_id) + ");"
 
         self._db_cursor = self._db_con.cursor()    
         try:
