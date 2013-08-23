@@ -36,7 +36,7 @@ def index():
 @pythonotes.route('/notes/', methods = ['GET'])
 def get_all_notes(): 
     temp = temp_helper.db_read_all()
-    return jsonify( temp )
+    return jsonify( { "notes": temp } )
 
 # Note - GET
 # Return a specified notes resource
@@ -54,7 +54,7 @@ def get_specific_notepad(notepad_id):
     temp = temp_helper.db_read_specific_notepad(notepad_id)
     if len(temp) == 0:
         abort(404) 
-    return jsonify( temp )
+    return jsonify( { "notes": temp } )
     
 # Last Note Created - GET
 # Returns the row ID for the last row created
