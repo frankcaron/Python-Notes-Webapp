@@ -15,10 +15,10 @@ import datetime
 urlparse.uses_netloc.append("postgres")
 
 #Remote
-# url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_RED_URL"])
+url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_RED_URL"])
 
 #Local
-url = urlparse.urlparse("postgres://franktest:@127.0.0.1:5432/notes")
+#url = urlparse.urlparse("postgres://frankcaron:@127.0.0.1:5432/notes")
 
 #
 # Module: DBWriter

@@ -20,7 +20,7 @@ temp_deleter = DBHelper.DBDeleter()
 @pythonotes.route('/')
 @pythonotes.route('/index')
 def index():
-    return "{ "href" : "/notes/" }"
+    return '{ "href" : "/notes/" }'
 
 # REST Handlers
 # -------------------
