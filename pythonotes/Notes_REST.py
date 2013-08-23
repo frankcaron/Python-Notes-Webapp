@@ -20,7 +20,7 @@ temp_deleter = DBHelper.DBDeleter()
 @pythonotes.route('/')
 @pythonotes.route('/index')
 def index():
-    return "Frank's humble python web service beginnings, now with notes. And fun."
+    return "{ "href" : "/notes/" }"
 
 # REST Handlers
 # -------------------
@@ -36,7 +36,7 @@ def index():
 @pythonotes.route('/notes/', methods = ['GET'])
 def get_all_notes(): 
     temp = temp_helper.db_read_all()
-    return jsonify( { 'notes': temp } )
+    return jsonify( temp )
 
 # Note - GET
 # Return a specified notes resource
@@ -45,7 +45,7 @@ def get_specific_note(note_id):
     temp = temp_helper.db_read_specific(note_id)
     if len(temp) == 0:
         abort(404) 
-    return jsonify( { 'notes': temp } )
+    return jsonify( temp )
     
 # Notepad - Get
 # Returns all the notes associated with a specific notepad    
@@ -54,7 +54,7 @@ def get_specific_notepad(notepad_id):
     temp = temp_helper.db_read_specific_notepad(notepad_id)
     if len(temp) == 0:
         abort(404) 
-    return jsonify( { 'notes': temp } )
+    return jsonify( temp )
     
 # Last Note Created - GET
 # Returns the row ID for the last row created
