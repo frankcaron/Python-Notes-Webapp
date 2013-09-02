@@ -45,7 +45,7 @@ def get_specific_note(note_id):
     temp = temp_helper.db_read_specific(note_id)
     if len(temp) == 0:
         abort(404) 
-    return jsonify( temp )
+    return jsonify(temp[0])
     
 # Notepad - Get
 # Returns all the notes associated with a specific notepad    

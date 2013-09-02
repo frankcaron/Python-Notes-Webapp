@@ -18,7 +18,7 @@ urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_RED_URL"])
 
 #Local
-#url = urlparse.urlparse("postgres://frankcaron:@127.0.0.1:5432/postgres")
+#url = urlparse.urlparse("postgres://frankcaron:@127.0.0.1:5432/frankcaron")
 
 #
 # Module: DBWriter
